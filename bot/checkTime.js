@@ -142,5 +142,6 @@ if(require.main == module)
 	testCheckTime(6, 30, 6, 15, 6, 45, true, 6);
 	testCheckTime(6, 30, 6, 45, 6, 15, false, 7);
 	testCheckTime(7, 30, 6, 45, 6, 15, true, 8);
+	testCheckTime(23, 31, 23, 0, 6, 0, true, 9);
 }
 

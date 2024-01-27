@@ -25,16 +25,16 @@ function checkChannel(serverInfo, guild, channel)
 		var hours = new Date().getHours();
 		var minutes = new Date().getMinutes();
 
-		var stopTimeHours = serverInfo.insomniaStopTime.split(":")[0];
-		var stopTimeMinutes = serverInfo.insomniaStopTime.split(":")[1];
+		var stopTimeHours = parseInt(serverInfo.insomniaStopTime.split(":")[0]);
+		var stopTimeMinutes = parseInt(serverInfo.insomniaStopTime.split(":")[1]);
 
-		var startTimeHours = serverInfo.insomniaStartTime.split(":")[0];
-		var startTimeMinutes = serverInfo.insomniaStartTime.split(":")[1];
+		var startTimeHours = parseInt(serverInfo.insomniaStartTime.split(":")[0]);
+		var startTimeMinutes = parseInt(serverInfo.insomniaStartTime.split(":")[1]);
 			
 		var shouldBeOpen = checkTime(hours, minutes, startTimeHours, startTimeMinutes, stopTimeHours, stopTimeMinutes);
 		
-		console.log("Server \"" + guild.name + "\" and channel " + channel.name + " should" + (shouldBeOpen ? "" : " not") + " be open");
-
+		console.log(hours + ":" + minutes + "\tServer \"" + guild.name + "\" and channel " + channel.name + " should" + (shouldBeOpen ? "" : " not") + " be open");
+		
 		channel.permissionOverwrites.edit(guild.roles.everyone, {"SendMessages": shouldBeOpen});
 	}
 	catch(e)

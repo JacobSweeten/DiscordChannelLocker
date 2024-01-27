@@ -12,4 +12,6 @@ WORKDIR /bot
 
 RUN npm install
 
+ENV TZ=US/Central
+
 COPY ./config.json /bot/config.json
