@@ -1,0 +1,10 @@
+{
+	"APIKey": "ABCDEFGHIJKLMNOP",
+	"servers": {
+		"676894180848566273": {
+			"channelID": "123456789",
+			"insomniaStartTime": "23:00",
+			"insomniaStopTime": "6:00"
+		}
+	}
+}
